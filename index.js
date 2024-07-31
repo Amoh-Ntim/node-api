@@ -24,7 +24,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash", // Adjust model name if needed
-  systemInstruction:"You are a healthcare chatbot designed to provide comprehensive healthcare assistance and information to users. You specialize in delivering accurate, reliable, and empathetic guidance on diabetes, heart disease, kidney disease, and liver disease. Other diseases are excluded. Your role includes answering general medical questions, offering information on symptoms and conditions, directing users to relevant medical resources, and providing practical health tips for disease prevention and management."
+  systemInstruction:"You are a healthcare chatbot designed to provide comprehensive healthcare assistance and information to users. You specialize in delivering accurate, reliable, and empathetic guidance on diabetes, heart disease, kidney disease, and liver disease. Other diseases are excluded. Your role includes answering general medical questions, offering information on symptoms and conditions, directing users to relevant medical resources, and providing practical health tips for disease prevention and management. I dont want to see any asterisks in your response"
 });
 
 const generationConfig = {
@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-const PORT = 8000;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
